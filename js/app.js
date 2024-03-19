@@ -25,7 +25,7 @@ function vipObjectCreator (tableName, vipName, number){
 
 const tavoloVip = ['Brad Pitt', 'Johnny Depp', 'Lady Gaga', 'Cristiano Ronaldo', 'Georgina Rodriguez', 'Chiara Ferragni', 'Fedez', 'George Clooney', 'Amal Clooney', 'Maneskin'] //stringArray
 
-const segnaPostListMap = tavoloVip.map((el, i) => vipObjectCreator("Tavolo Vip", el, i + 1))
+const segnaPostListMap = tavoloVip.map((el, i) => vipObjectCreator("Tavolo Vip", el, i + 1)); //object array
 console.log(segnaPostListMap)
 
 //METODO FOR
@@ -45,12 +45,6 @@ console.log(segnaPostListMap)
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 // *SNACK 2*
-// Abbiamo un elenco degli studenti di una facoltà, identificati da id, Nome e somma totale dei loro voti di esame...
-// 1. Per preparare l’aula di un nuovo corso, dobbiamo stampare le targhe col nome degli studenti: 
-//  creare una lista contenente il loro nome tutto in maiuscolo
-// ES (Marco della Rovere => MARCO DELLA ROVERE);
-// 2. Dobbiamo creare una lista di tutti gli studenti che hanno un totale di voti superiore a 70
-// 3. Dobbiamo creare una lista di tutti gli studenti che hanno un totale di voti superiore a 70 e id superiore a 120
 // Questo è l’elenco degli studenti:
 // Id   Name                    Grades
 // 213  Marco della Rovere      78
@@ -74,7 +68,7 @@ function studentCardGenerator (idNumber, studentName, studentGrades){
     }
 
     return student
-}
+};
 
 //main
 const student1 = studentCardGenerator(213, "Marco delle Rovere", 78); //object
@@ -86,39 +80,83 @@ const student6 = studentCardGenerator(102, "Piero della Francesca", 50); //objec
 const student7 = studentCardGenerator(120, "Francesca da Polenta", 84); //object
 
 const students = [student1, student2, student3, student4, student5, student6, student7]; //objectArray
-const studentsNamesList = []; //stringArray
-const studentsGradesFiltered = []; //objectArray
-const studentsGradesAndIdFiltered = []; //objectArray
+console.log(students)
+// 1. Per preparare l’aula di un nuovo corso, dobbiamo stampare le targhe col nome degli studenti: 
+//  creare una lista contenente il loro nome tutto in maiuscolo
+const upperCaseNamesList = students.map((student) => {
+   return{
+    id: student.id,
+    name: student.name.toUpperCase(),
+    grade: student.grade
+    } 
+}); //object array
 
-for(let j = 0; j < students.length; j++){
+console.log(upperCaseNamesList)
+// 2. Dobbiamo creare una lista di tutti gli studenti che hanno un totale di voti superiore a 70
+const studentsGradesFiltered = upperCaseNamesList.filter((student) => student.grade > 70); //object array
+console.log(studentsGradesFiltered);
+// 3. Dobbiamo creare una lista di tutti gli studenti che hanno un totale di voti superiore a 70 e id superiore a 120
+const studentsGradesAndIdFiltered = studentsGradesFiltered.filter((student) => student.id > 120); //object array
+console.log(studentsGradesAndIdFiltered);
 
-    const originalName = students[j].name; //string
-    const upperCaseName = originalName.toUpperCase();
-    studentsNamesList.push(upperCaseName);
 
-    const studentGrade = students[j].grade; //number
-    const studentId = students[j].id; //number
 
-    if(studentGrade > 70){
-        studentsGradesFiltered.push(students[j]);
-    }
 
-    if (studentGrade > 70 && studentId > 120){
-        studentsGradesAndIdFiltered.push(students[j]);
-    }
-}
 
-console.log(studentsNamesList)
-console.log(studentsGradesFiltered)
-console.log(studentsGradesAndIdFiltered)
 
-//^^^^^^^^^^^^^^^^^^^^^^ CON METODO .FILTER ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-const studentsGradesFiltered2 = students.filter((student) => student.grade > 70);
-console.log(studentsGradesFiltered2);
 
-const studentsGradesAndIdFiltered2 = studentsGradesFiltered2.filter((student) => student.id > 120);
-console.log(studentsGradesAndIdFiltered2);
 
-//^^^^^^^^^^^^^^^^^^^^^^^^^^^^ CON METODO .MAP ^^^^^^^^^^^^^^^^^^^^^^^^^^
-const studentsNamesList2 = students.map((student) => student.name.toUpperCase());
-console.log(studentsNamesList2);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//METODO FOR
+// const studentsNamesList = []; //stringArray
+// const studentsGradesFiltered = []; //objectArray
+// const studentsGradesAndIdFiltered = []; //objectArray
+
+// for(let j = 0; j < students.length; j++){
+
+//     const originalName = students[j].name; //string
+//     const upperCaseName = originalName.toUpperCase();
+//     studentsNamesList.push(upperCaseName);
+
+//     const studentGrade = students[j].grade; //number
+//     const studentId = students[j].id; //number
+
+//     if(studentGrade > 70){
+//         studentsGradesFiltered.push(students[j]);
+//     }
+
+//     if (studentGrade > 70 && studentId > 120){
+//         studentsGradesAndIdFiltered.push(students[j]);
+//     }
+// }
+
+// console.log(studentsNamesList)
+// console.log(studentsGradesFiltered)
+// console.log(studentsGradesAndIdFiltered)
+
+
+
