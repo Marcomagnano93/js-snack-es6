@@ -24,9 +24,8 @@ function vipObjectCreator (tableName, vipName, number){
 //main
 
 const tavoloVip = ['Brad Pitt', 'Johnny Depp', 'Lady Gaga', 'Cristiano Ronaldo', 'Georgina Rodriguez', 'Chiara Ferragni', 'Fedez', 'George Clooney', 'Amal Clooney', 'Maneskin'] //stringArray
-const vipNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-const segnaPostListMap = tavoloVip.map((el) => vipObjectCreator("Tavolo Vip", el, vipNumber))
+const segnaPostListMap = tavoloVip.map((el, i) => vipObjectCreator("Tavolo Vip", el, i + 1))
 console.log(segnaPostListMap)
 
 //METODO FOR
