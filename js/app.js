@@ -107,6 +107,13 @@ console.log(studentsNamesList)
 console.log(studentsGradesFiltered)
 console.log(studentsGradesAndIdFiltered)
 
+//^^^^^^^^^^^^^^^^^^^^^^ CON METODO .FILTER ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+const studentsGradesFiltered2 = students.filter((student) => student.grade > 70);
+console.log(studentsGradesFiltered2);
 
-// const studentsGradesFiltered = students.filter((student) => student.grade > 70);
-// console.log(result);
+const studentsGradesAndIdFiltered2 = studentsGradesFiltered2.filter((student) => student.id > 120);
+console.log(studentsGradesAndIdFiltered2);
+
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^ CON METODO .MAP ^^^^^^^^^^^^^^^^^^^^^^^^^^
+const studentsNamesList2 = students.map((student) => student.name.toUpperCase())
+console.log(studentsNamesList2);
