@@ -71,16 +71,17 @@ function studentCardGenerator (idNumber, studentName, studentGrades){
 };
 
 //main
-const student1 = studentCardGenerator(213, "Marco delle Rovere", 78); //object
-const student2 = studentCardGenerator(110, "Paolo cortellessa", 96); //object
-const student3 = studentCardGenerator(250, "Andrea Montegna", 48); //object
-const student4 = studentCardGenerator(145, "Gaia Borromini", 74); //object
-const student5 = studentCardGenerator(196, "Luigi Grimaldello", 68); //object
-const student6 = studentCardGenerator(102, "Piero della Francesca", 50); //object
-const student7 = studentCardGenerator(120, "Francesca da Polenta", 84); //object
+const students = [
+    studentCardGenerator(213, "Marco delle Rovere", 78),
+    studentCardGenerator(110, "Paolo cortellessa", 96),
+    studentCardGenerator(250, "Andrea Montegna", 48),
+    studentCardGenerator(145, "Gaia Borromini", 74),
+    studentCardGenerator(196, "Luigi Grimaldello", 68),
+    studentCardGenerator(102, "Piero della Francesca", 50),
+    studentCardGenerator(120, "Francesca da Polenta", 84)]; //objectArray
 
-const students = [student1, student2, student3, student4, student5, student6, student7]; //objectArray
 console.log(students)
+
 // 1. Per preparare l’aula di un nuovo corso, dobbiamo stampare le targhe col nome degli studenti: 
 //  creare una lista contenente il loro nome tutto in maiuscolo
 const upperCaseNamesList = students.map((student) => {
@@ -92,9 +93,11 @@ const upperCaseNamesList = students.map((student) => {
 }); //object array
 
 console.log(upperCaseNamesList)
+
 // 2. Dobbiamo creare una lista di tutti gli studenti che hanno un totale di voti superiore a 70
 const studentsGradesFiltered = upperCaseNamesList.filter((student) => student.grade > 70); //object array
 console.log(studentsGradesFiltered);
+
 // 3. Dobbiamo creare una lista di tutti gli studenti che hanno un totale di voti superiore a 70 e id superiore a 120
 const studentsGradesAndIdFiltered = studentsGradesFiltered.filter((student) => student.id > 120); //object array
 console.log(studentsGradesAndIdFiltered);
