@@ -7,3 +7,36 @@
 // nome dell’ospite,
 // posto occupato.
 // Generiamo e stampiamo in console la lista per i segnaposto.
+
+//utilities
+
+function objectCreator (tableName, name, number){
+
+    const object = {
+        table: tableName,
+        guest: name,
+        sit: number
+    }
+
+    return object
+}
+
+//main
+
+const tavoloVip = ['Brad Pitt', 'Johnny Depp', 'Lady Gaga', 'Cristiano Ronaldo', 'Georgina Rodriguez', 'Chiara Ferragni', 'Fedez', 'George Clooney', 'Amal Clooney', 'Maneskin'] //stringArray
+
+const segnaPostoList = []
+
+for(let i = 0; i < tavoloVip.length; i++){
+    
+    const guestName = tavoloVip[i]; //string
+    const guestPlace = i + 1; //number
+    // console.log(guest);
+    // console.log(guestPlace)
+    const segnaPosto = objectCreator("Tavolo Vip", guestName, guestPlace); //object
+
+    segnaPostoList.push(segnaPosto)
+
+}
+
+console.log(segnaPostoList)
