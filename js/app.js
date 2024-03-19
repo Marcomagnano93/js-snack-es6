@@ -24,18 +24,24 @@ function vipObjectCreator (tableName, vipName, number){
 //main
 
 const tavoloVip = ['Brad Pitt', 'Johnny Depp', 'Lady Gaga', 'Cristiano Ronaldo', 'Georgina Rodriguez', 'Chiara Ferragni', 'Fedez', 'George Clooney', 'Amal Clooney', 'Maneskin'] //stringArray
+const vipNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-const segnaPostoList = [] //objectArray
+const segnaPostListMap = tavoloVip.map((el) => vipObjectCreator("Tavolo Vip", el, vipNumber))
+console.log(segnaPostListMap)
 
-for(let i = 0; i < tavoloVip.length; i++){
+//METODO FOR
+// const segnaPostoList = [] //objectArray
+
+// for(let i = 0; i < tavoloVip.length; i++){
     
-    const guestName = tavoloVip[i]; //string
-    const guestPlace = i + 1; //number
-    const segnaPosto = vipObjectCreator("Tavolo Vip", guestName, guestPlace); //object
-    segnaPostoList.push(segnaPosto)
-}
+//     const guestName = tavoloVip[i]; //string
+//     const guestPlace = i + 1; //number
+//     const segnaPosto = vipObjectCreator("Tavolo Vip", guestName, guestPlace); //object
+//     segnaPostoList.push(segnaPosto)
+// }
 
-console.log(segnaPostoList)
+// console.log(segnaPostoList)
+
 
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
