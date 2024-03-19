@@ -72,34 +72,34 @@ function studentCardGenerator (idNumber, studentName, studentGrades){
 }
 
 //main
-const student1 = studentCardGenerator(213, "Marco delle Rovere", 78) //object
-const student2 = studentCardGenerator(110, "Paolo cortellessa", 96) //object
-const student3 = studentCardGenerator(250, "Andrea Montegna", 48) //object
-const student4 = studentCardGenerator(145, "Gaia Borromini", 74) //object
-const student5 = studentCardGenerator(196, "Luigi Grimaldello", 68) //object
-const student6 = studentCardGenerator(102, "Piero della Francesca", 50) //object
-const student7 = studentCardGenerator(120, "Francesca da Polenta", 84) //object
+const student1 = studentCardGenerator(213, "Marco delle Rovere", 78); //object
+const student2 = studentCardGenerator(110, "Paolo cortellessa", 96); //object
+const student3 = studentCardGenerator(250, "Andrea Montegna", 48); //object
+const student4 = studentCardGenerator(145, "Gaia Borromini", 74); //object
+const student5 = studentCardGenerator(196, "Luigi Grimaldello", 68); //object
+const student6 = studentCardGenerator(102, "Piero della Francesca", 50); //object
+const student7 = studentCardGenerator(120, "Francesca da Polenta", 84); //object
 
-const students = [student1, student2, student3, student4, student5, student6, student7] //objectArray
-const studentsNamesList = [] //stringArray
-const studentsGradesFiltered = [] //objectArray
-const studentsGradesAndIdFiltered = [] //objectArray
+const students = [student1, student2, student3, student4, student5, student6, student7]; //objectArray
+const studentsNamesList = []; //stringArray
+const studentsGradesFiltered = []; //objectArray
+const studentsGradesAndIdFiltered = []; //objectArray
 
 for(let j = 0; j < students.length; j++){
 
     const originalName = students[j].name; //string
-    const upperCaseName = originalName.toUpperCase()
-    studentsNamesList.push(upperCaseName)
+    const upperCaseName = originalName.toUpperCase();
+    studentsNamesList.push(upperCaseName);
 
-    const studentGrade = students[j].grade //number
-    const studentId = students[j].id //number
+    const studentGrade = students[j].grade; //number
+    const studentId = students[j].id; //number
 
     if(studentGrade > 70){
-        studentsGradesFiltered.push(students[j])
+        studentsGradesFiltered.push(students[j]);
     }
 
     if (studentGrade > 70 && studentId > 120){
-        studentsGradesAndIdFiltered.push(students[j])
+        studentsGradesAndIdFiltered.push(students[j]);
     }
 }
 
@@ -115,5 +115,5 @@ const studentsGradesAndIdFiltered2 = studentsGradesFiltered2.filter((student) =>
 console.log(studentsGradesAndIdFiltered2);
 
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^ CON METODO .MAP ^^^^^^^^^^^^^^^^^^^^^^^^^^
-const studentsNamesList2 = students.map((student) => student.name.toUpperCase())
+const studentsNamesList2 = students.map((student) => student.name.toUpperCase());
 console.log(studentsNamesList2);
