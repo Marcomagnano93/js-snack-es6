@@ -119,66 +119,41 @@ function bikeGenerator (type, bicicleWeight){
 
 const bicicles = [
     bikeGenerator("forte", 30),
-    bikeGenerator("leggera", 12),
+    bikeGenerator("fortissima", 40),
     bikeGenerator("sportiva", 25),
     bikeGenerator("elegante", 22)
 ]
 
 console.log(bicicles)
 
-const bikeswh = []
+let bikeLight = bicicles[0]; //object
 
-for(let x = 0; x < bicicles.length; x++){
+for(let x = 1; x < bicicles.length; x++){
 
-    const xIndex = bicicles[x];
+    const currentBike = bicicles[x];
 
-    bikeswh.push(xIndex.weight)
+    if(currentBike.weight < bikeLight.weight){
+        bikeLight = currentBike;
+    }
 }
 
-const lowestWeight = Math.min(...bikeswh)
+console.log(bikeLight)
 
-
-let lightBike = bicicles[x].weight === lowestWeight ? ` è la bici più leggera` : ` non è la più leggera`
-    console.log(lightBike)
-
-
-console.log(bikeswh)
-console.log(lowestWeight)
+const {name, weight} = bikeLight;
+console.log(`La bici che pesa meno di tutte è: "${name}" che pesa ${weight} kg"`)
 
 
 
+//OPPURE con metodo forEach:
+
+// bicicles.forEach( (currentElement) => {
+//     if(currentBike.weight < bikeLight.weight){
+//         bikeLight = currentBike;
+//     }
+
+// } )
 
 
-
-// const bike1 = {
-//     name: "sport",
-//     weight: 30
-// }
-const bike1 = {
-    name: "elegant",
-    weight: 25
-}
-
-
-const bike2 = {
-    name: "elegant",
-    weight: 25
-}
-
-const bike3 = {
-    name: "wow",
-    weight: 10
-}
-
-const bikes = [bike1, bike2, bike3];
-
-
-for(let bikeIndex = 0; x < bikes.length; bikeIndex++){
-
-    const ind = bikes[bikeIndex];
-
-    
-}
 
 
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -192,57 +167,51 @@ for(let bikeIndex = 0; x < bikes.length; bikeIndex++){
 // Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
 
 
-// function footBallSquad (squad, score = 0, fall = 0){
+function footBallSquad (squad, score = 0, fall = 0){
 
-//     const squadObject = {
-//         name: squad,
-//         pti: score,
-//         falls: fall
-//     }
-//     return squadObject
-// }
+    const squadObject = {
+        name: squad,
+        pti: score,
+        falls: fall
+    }
+    return squadObject
+}
 
-// function fSquad ({name, pti}){
-//     return name, pti
-// }
-
-
-
-
-// function getRandom1To100() {
-//     randomNumber = Math.floor(Math.random() * 100) + 1;
-//     return randomNumber
-//   }
+function getRandom1To100() {
+    randomNumber = Math.floor(Math.random() * 100) + 1;
+    return randomNumber
+  }
 
 
+const squadArray = [
+    footBallSquad("Roma"),
+    footBallSquad("Torino"),
+    footBallSquad("Milan"),
+    footBallSquad("Inter"),
+    footBallSquad("Juve"),
+]
 
 
+for(let y = 0; y < squadArray.length; y++){
 
-// const squadArray = [
-//     footBallSquad("Roma"),
-//     footBallSquad("Torino"),
-//     footBallSquad("Milan"),
-//     footBallSquad("Inter"),
-//     footBallSquad("Juve"),
-// ]
+    const index = squadArray[y];
 
+    const newPti = index.pti = getRandom1To100();
+    const newFalls = index.falls = getRandom1To100();
+}
 
-// for(let y = 0; y < squadArray.length; y++){
-
-//     const index = squadArray[y];
-
-//     const newPti = index.pti = getRandom1To100();
-//     const newFalls = index.falls = getRandom1To100();
-// }
+// console.log(squadArray)
 
 
+const squadArrayNameAndFall = squadArray.map((element) => {
 
+    return{
+     name: element.name,
+     falls: element.falls
+     } 
+ }); //object array
 
-
-// console.log(fSquad(squadArray))
-
-
-
+ console.log(squadArrayNameAndFall)
 
 
   
@@ -263,35 +232,6 @@ for(let bikeIndex = 0; x < bikes.length; bikeIndex++){
 
 
 
-
-
-
-//METODO FOR
-// const studentsNamesList = []; //stringArray
-// const studentsGradesFiltered = []; //objectArray
-// const studentsGradesAndIdFiltered = []; //objectArray
-
-// for(let j = 0; j < students.length; j++){
-
-//     const originalName = students[j].name; //string
-//     const upperCaseName = originalName.toUpperCase();
-//     studentsNamesList.push(upperCaseName);
-
-//     const studentGrade = students[j].grade; //number
-//     const studentId = students[j].id; //number
-
-//     if(studentGrade > 70){
-//         studentsGradesFiltered.push(students[j]);
-//     }
-
-//     if (studentGrade > 70 && studentId > 120){
-//         studentsGradesAndIdFiltered.push(students[j]);
-//     }
-// }
-
-// console.log(studentsNamesList)
-// console.log(studentsGradesFiltered)
-// console.log(studentsGradesAndIdFiltered)
 
 
 
