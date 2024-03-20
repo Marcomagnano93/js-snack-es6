@@ -173,6 +173,7 @@ function footBallSquad (squad, score = 0, fall = 0){
         name: squad,
         pti: score,
         falls: fall
+        
     }
     return squadObject
 }
@@ -204,6 +205,10 @@ for(let y = 0; y < squadArray.length; y++){
 
 
 const squadArrayNameAndFall = squadArray.map((element) => {
+
+    // const {name, falls} = element
+
+    // return element
 
     return{
      name: element.name,
